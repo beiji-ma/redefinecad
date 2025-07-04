@@ -1,67 +1,70 @@
 # RedefineCAD
 
-![Status](https://img.shields.io/badge/status-in%20progress-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Vision](https://img.shields.io/badge/vision-cad%20redefined-orange)
-
-**A Structural Rethinking of CAD Systems for the Future**
-
-RedefineCAD is a visionary initiative to reimagine the foundations of CAD systems by borrowing battle-tested principles from database internals, Linux filesystems, and distributed version control systems.
-
-This project proposes a new layered architecture for CAD data that separates logical structure from physical representation and introduces strong data governance, queryability, and recoverability—all without relying on conventional file systems.
-
-## ✨ Key Concepts
-
-* **CAD Autonomy**: CAD data as self-governing structures, not bound to files.
-* **Data Integrity**: Inspired by redo/undo, checkpointing, and block-level recovery mechanisms.
-* **Logical vs Physical Layers**: Decoupled management of metadata, geometry, and versioning.
-* **Query Engine + DSL**: Treating geometry and metadata as queryable, composable data.
-* **Version Control Redefined**: Integrated at the logical level, not imposed at storage.
-
-## 🧭 Vision
-
-> “To redefine the CAD ecosystem through architectural clarity, data autonomy, and engineering-grade recoverability.”
-
-We aim to:
-
-* Eliminate dependence on file-based storage
-* Enable scalable DMU across entire assemblies
-* Treat design data like structured, composable knowledge
-* Inspire a new class of CAD governance and logic-driven protocols
-
-## 📁 Repository Structure
-
-```text
-redefinecad/
-├── articles/            # Published design articles and vision documents
-│   ├── RedefineCAD-01-Foundation.md
-│   ├── RedefineCAD-02-DataIdentity.md
-│   └── ...
-├── dsl-engine/          # DSL tokenizer, parser, and query executor
-├── storage-core/        # Core logic for structure & persistence layer
-├── examples/            # Sample datasets and testing BOMs
-└── README.md
-```
-
-> 🔁 Formerly known as `docs/`; renamed to `articles/` for clarity.
-
-## 🌍 Status
-
-This repo contains selected publications, design notes, and DSL prototypes.
-The actual implementation is in a private research repository (`redefinecad-drafts`).
-
-## 📬 Contact
-
-If you're interested in collaboration, partnership, or research exchange:
-
-* GitHub: [beiji-ma](https://github.com/beiji-ma)
-* Email: *available upon request*
-
-## 📜 License
-
-MIT License — For educational and non-commercial use.
-Please contact the maintainer for commercial licensing discussions.
+> *“We don't fix CAD. We redefine it.”*
 
 ---
 
-> 🪴 *“First we redefine the protocol, then we govern the future of design.”*
+## 📘 Overview
+
+**RedefineCAD** is a long-term initiative to rethink how CAD data is governed, versioned, queried, and collaborated on — from first principles. Inspired by architectural patterns from databases (Oracle), source control (Git), operating systems (Linux), and real-world PLM platforms, this project introduces a layered, modular approach to CAD system design.
+
+This repository contains:
+
+- 📄 **Published Articles** (in `articles/`) — English-only, canonical source
+- 🧪 **Drafts** of in-progress content — private repo: `redefinecad-drafts`
+- 📚 **Resources & diagrams** — architectural visuals and templates
+
+---
+
+## 🧱 Project Structure
+
+```
+redefinecad/
+├── articles/             # Published Markdown articles
+├── diagrams/             # SVG / PNG architecture illustrations
+├── LICENSE               # CC BY-NC-ND 4.0 license
+├── NOTICE.md             # Legal notices and attribution
+├── README.md             # You are here
+```
+
+---
+
+## 🌱 Philosophy
+
+RedefineCAD is not a product — it’s a **conceptual framework**. We believe:
+
+- CAD data should be governed like databases, not like drawing boards.
+- Metadata, versioning, and collaboration should be **built-in**, not bolted-on.
+- The future of CAD requires **queryable**, **auditable**, and **modular** systems.
+
+We aim to define new standards for:
+
+- Immutable storage and identity
+- Schema-driven metadata governance
+- Embedded query DSL for CAD metadata
+- Local-first collaboration and revision logic
+
+---
+
+## 📎 Key Resources
+
+- 🌐 [Project Website (Coming Soon)](https://redefinecad.org)
+- 📖 Articles Index → [`articles/`](./articles)
+- 🖼 Architecture Diagrams → [`diagrams/`](./diagrams)
+
+---
+
+## ⚖️ License & Attribution
+
+© 2025 Beiji Ma. All rights reserved.
+
+This work is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**.
+
+Please see [`NOTICE.md`](./NOTICE.md) for full copyright, author rights, and legal disclosures.
+
+---
+
+## 🤝 Contact & Community
+
+For updates, follow [@beiji-ma](https://github.com/beiji-ma) on GitHub. Want to contribute ideas? PRs and issues welcome (articles only, for now).
+
