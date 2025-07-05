@@ -95,7 +95,16 @@ This work is licensed under the **Creative Commons Attribution-NonCommercial-NoD
 🔗 Please cite this work as:  
 *Beiji Ma, "RedefineCAD: Rethinking CAD from First Principles", 2025, https://github.com/beiji-ma/redefinecad*
 
-📄 See [NOTICE.md](./articles/NOTICE.md) for full copyright, author rights, and legal disclosures.
+📄 See [articles/NOTICE.md](https://github.com/beiji-ma/redefinecad/blob/main/articles/NOTICE.md) for full copyright, author rights, and legal disclosures.
+
+---
+
+## 📁 Project Structure
+
+- [`articles/`](https://github.com/beiji-ma/redefinecad/tree/main/articles) – Published article drafts
+- [`assets/`](https://github.com/beiji-ma/redefinecad/tree/main/assets) – Diagrams and system illustrations
+- [`examples/`](https://github.com/beiji-ma/redefinecad/tree/main/examples) – Sample data for demos
+- [`articles/NOTICE.md`](https://github.com/beiji-ma/redefinecad/blob/main/articles/NOTICE.md) – Legal and author notice
 
 ---
 
