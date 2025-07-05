@@ -77,7 +77,7 @@ This work is licensed under the **Creative Commons Attribution-NonCommercial-NoD
 🔗 Please cite this work as:  
 *Beiji Ma, "RedefineCAD: Rethinking CAD from First Principles", 2025, https://github.com/beiji-ma/redefinecad*
 
-📄 See [NOTICE.md](./NOTICE.md) for full copyright, author rights, and legal disclosures.
+📄 See [NOTICE.md](./articles/NOTICE.md) for full copyright, author rights, and legal disclosures.
 
 ---
 
