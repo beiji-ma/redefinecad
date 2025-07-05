@@ -68,6 +68,18 @@ We plant this tree for future engineers.
 
 ---
 
+## 🛠️ Accessible for All Scales
+
+RedefineCAD is not designed exclusively for aerospace giants or automotive conglomerates. By keeping the core architecture minimal and modular, we aim to empower:
+
+- 🧑‍🔧 **Individual designers** working in workshops or maker spaces  
+- 🏢 **Small and medium-sized enterprises (SMEs)** with limited IT infrastructure  
+- 🧪 **Startups** experimenting with custom design and manufacturing pipelines  
+
+A minimal kernel with powerful abstraction layers means the same core can serve both single-user scenarios and enterprise-grade collaborative environments.
+
+---
+
 ## ⚖️ License and Attribution
 
 © 2025 Beiji Ma. All rights reserved.  
