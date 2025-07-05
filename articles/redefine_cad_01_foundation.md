@@ -29,13 +29,13 @@ Most CAD systems suffer from:
 
 RedefineCAD proposes a new foundation:
 
-| Layer               | Concept                                        | Inspiration                       |
-|---------------------|------------------------------------------------|-----------------------------------|
-| Physical Storage    | Append-only, block-based object store         | Git, Oracle Redo Logs             |
-| Logical Structure   | Named parts, assemblies, revisions, constraints | RDBMS Tables + Version Control    |
-| Metadata Governance | Typed, validated fields + provenance tracking | PLM systems + Git config          |
-| Query Engine        | DSL for traversal, filtering, analysis        | SQL, JSONPath, Gremlin            |
-| Collaboration       | Branches, conflict resolution, trust graph    | Git, CRDTs                        |
+| Layer               | Concept                                        | Inspiration                            |
+|---------------------|------------------------------------------------|----------------------------------------|
+| Physical Storage    | Append-only, block-based object store          | Git, Oracle Redo Logs                  |
+| Logical Structure   | Named parts, assemblies, revisions, constraints| RDBMS Tables + Version Control         |
+| Metadata Governance | Typed, validated fields + provenance tracking  | PLM systems + Git config               |
+| Query Engine        | DSL for structure-aware filtering and analysis | SQL, JSONPath, MQL, Gremlin            |
+| Collaboration       | Branches, merge strategies, trust graph        | Git, CRDTs, PLM ACLs                   |
 
 ---
 
