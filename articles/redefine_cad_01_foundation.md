@@ -34,7 +34,7 @@ RedefineCAD proposes a new foundation:
 | Physical Storage    | Append-only, block-based object store         | Git, Oracle Redo Logs             |
 | Logical Structure   | Named parts, assemblies, revisions, constraints | RDBMS Tables + Version Control    |
 | Metadata Governance | Typed, validated fields + provenance tracking | PLM systems + Git config          |
-| Query Engine        | DSL for traversal, filtering, analysis        | SQL, JSONPath, MQL            |
+| Query Engine        | DSL for traversal, filtering, analysis        | SQL, JSONPath, MQL, Gremlin            |
 | Collaboration       | Branches, conflict resolution, trust graph    | Git, CRDTs                        |
 
 ---
