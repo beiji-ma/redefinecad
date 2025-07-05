@@ -37,6 +37,12 @@ RedefineCAD proposes a new foundation:
 | Query Engine        | DSL for structure-aware filtering and analysis | SQL, JSONPath, MQL, Gremlin            |
 | Collaboration       | Branches, merge strategies, trust graph        | Git, CRDTs, PLM ACLs                   |
 
+> RedefineCAD promotes a **serverless architecture** for version control and metadata query. However, this does not mean abandoning security. Instead, we embrace:
+> 
+> - **Local-first querying** via structured DSLs  
+> - **Decentralized versioning** via content hashes and history chains  
+> - **Distributed security** via metadata signatures and trust graphs, without relying on centralized servers
+
 ---
 
 ## 🧱 Design Principles
