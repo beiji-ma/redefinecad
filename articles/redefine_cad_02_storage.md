@@ -56,7 +56,7 @@ store/
 
 A single file, `manifest.json`, may describe the entry point, type system, schema versions, and basic metadata.
 
-💡 *Note: In this illustration, we use **``** folder to explain the object model. In practice, these objects are not tied to any specific file format or filesystem layout. They may reside in a Git packfile, a content-addressable database, or even an object storage like S3 or IPFS. The JSON representation is used here purely for conceptual clarity.*
+💡 *Note: In this illustration, we use the **``** folder with **``** files to explain the object model conceptually. In practice, these objects are not tied to any specific file format or filesystem layout. They may reside in a Git packfile, a content-addressable database, or even an object storage like S3 or IPFS. The JSON representation is only a pedagogical convenience—not a literal implementation.*
 
 ## Benefits
 
@@ -120,6 +120,10 @@ This is especially powerful in distributed scenarios or environments with poor r
 ## Next Up
 
 The next article in the series will focus on **Versioning Without Servers**—how RedefineCAD enables distributed collaboration and traceable history without requiring centralized databases or file servers.
+
+☑️ *Supplemental Reading:* [Why RedefineCAD](https://github.com/beiji-ma/redefinecad/blob/main/articles/why_redefinecad.md)
+
+📖 *Previously:* [RedefineCAD-01-Foundation](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_01_foundation.md)
 
 ---
 

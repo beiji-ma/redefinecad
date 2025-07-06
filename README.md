@@ -19,8 +19,13 @@ This is a multi-phase, long-term project that starts small—but is deeply ambit
 
 This project is documented through a series of articles:
 
-- ✅ [RedefineCAD-01: Foundation and Motivation](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_01_foundation.md)
-- 🔜 RedefineCAD-02: Storage Layer and Object Identity
+- 🟢 [RedefineCAD-01: Foundation and Motivation](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_01_foundation.md)
+- 🟢 [RedefineCAD-02: Storage Layer and Object Identity](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_02_storage.md)
+- 🔵 RedefineCAD-03: Versioning Without Servers *(Coming Soon)*
+
+🧩 Supplement:
+
+- [Why RedefineCAD? (Philosophy and Ecosystem Primer)](https://github.com/beiji-ma/redefinecad/blob/main/articles/why_redefinecad.md)
 
 To cite this work:
 
