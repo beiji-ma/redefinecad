@@ -22,6 +22,7 @@ This project is documented through a series of articles:
 - 🟢 [RedefineCAD-01: Foundation and Motivation](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_01_foundation.md)
 - 🟢 [RedefineCAD-02: Storage Layer and Object Identity](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_02_storage.md)
 - 🟢 [RedefineCAD-03: Versioning Without Servers](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_03_versioning.md)
+- 🟢 [RedefineCAD Side Story: CATIA Dump Protocol](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_side_story_dump_protocol.md)
 - 🔵 RedefineCAD-04: Deep Dive into CATIA Dump Protocol *(Coming Soon)*
 
 🧩 Supplement:
@@ -39,7 +40,9 @@ Beiji Ma, "RedefineCAD: Rethinking CAD from First Principles", 2025, https://git
 ## 🧭 Key Concepts from the Architecture Diagrams
 
 ### 🔹 Snapshot
+
 A **Snapshot** is a lightweight, point-in-time capture of the entire design metadata structure. It:
+
 - Stores only object hashes (not full data)
 - Enables fast diff, branching, rollback
 - Is fully offline, no server involved
@@ -47,12 +50,15 @@ A **Snapshot** is a lightweight, point-in-time capture of the entire design meta
 > Think of it as a Git commit—but designed for CAD metadata graphs, not files.
 
 ### 🔹 Object
+
 The smallest unit of meaningful metadata—geometry, sketch, view, note, feature, etc.—each with a unique hash.
 
 ### 🔹 Tree
+
 A hierarchical structure that aggregates objects. A snapshot points to one or more trees.
 
 ### 🔹 Diff
+
 A compact, semantic difference between two trees or snapshots, enabling lightweight versioning and merging.
 
 These concepts appear repeatedly in our visual and textual design. Familiarity will help readers understand the versioning strategy better.
