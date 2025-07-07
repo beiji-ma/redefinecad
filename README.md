@@ -36,6 +36,29 @@ Beiji Ma, "RedefineCAD: Rethinking CAD from First Principles", 2025, https://git
 
 ---
 
+## 🧭 Key Concepts from the Architecture Diagrams
+
+### 🔹 Snapshot
+A **Snapshot** is a lightweight, point-in-time capture of the entire design metadata structure. It:
+- Stores only object hashes (not full data)
+- Enables fast diff, branching, rollback
+- Is fully offline, no server involved
+
+> Think of it as a Git commit—but designed for CAD metadata graphs, not files.
+
+### 🔹 Object
+The smallest unit of meaningful metadata—geometry, sketch, view, note, feature, etc.—each with a unique hash.
+
+### 🔹 Tree
+A hierarchical structure that aggregates objects. A snapshot points to one or more trees.
+
+### 🔹 Diff
+A compact, semantic difference between two trees or snapshots, enabling lightweight versioning and merging.
+
+These concepts appear repeatedly in our visual and textual design. Familiarity will help readers understand the versioning strategy better.
+
+---
+
 ## 📁 Repository Structure
 
 | Folder               | Contents                                 |
