@@ -10,6 +10,12 @@ Nowhere is this more evident than in the transition from **MatrixOne**, the sema
 
 > You don’t need to be a CAD expert to follow this article — just a basic understanding of what a Part, Drawing, or View represents (as illustrated in our `assets/` images) is enough. The focus is not CAD itself, but how we **apply semantic modeling** in a CAD context.
 
+> 🎯 *The DSL structure shown in the cover image serves as a visual shorthand — for anyone who once modeled with MatrixOne, its semantic lineage is instantly recognizable.*
+
+![Semantic Modeling Cover — From MatrixOne to RedefineCAD](https://github.com/beiji-ma/redefinecad/blob/main/assets/semantic-modeling-matrixone-redefinecad-cover.png)
+
+*Figure: Visual comparison between MatrixOne-style semantic definitions and RedefineCAD’s lightweight DSL — both prioritizing types, relationships, and engineering clarity.*
+
 This article traces how the **semantic modeling philosophy** — as practiced in MatrixOne — is being reimagined and extended through RedefineCAD.
 
 ---
