@@ -8,6 +8,8 @@ We follow the philosophy of semantic modeling — not as an academic artifact, b
 
 Nowhere is this more evident than in the transition from **MatrixOne**, the semantic backbone of ENOVIA, to **RedefineCAD**, a new generation tooling framework designed to semantically express CAD structures and metadata outside their native silos.
 
+> You don’t need to be a CAD expert to follow this article — just a basic understanding of what a Part, Drawing, or View represents (as illustrated in our `assets/` images) is enough. The focus is not CAD itself, but how we **apply semantic modeling** in a CAD context.
+
 This article traces how the **semantic modeling philosophy** — as practiced in MatrixOne — is being reimagined and extended through RedefineCAD.
 
 ---
