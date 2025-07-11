@@ -25,7 +25,8 @@ This project is documented through a series of articles:
 - 🟢 [RedefineCAD Side Story: CATIA Dump Protocol](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_side_story_dump_protocol.md)
 - 🟢 [RedefineCAD-04: Deep Dive into CATIA Dump Protocol](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_04_dump_protocol.md)
 - 🟢 [RedefineCAD-05: From Structure to Query](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_05_query.md)
-- 🔵 RedefineCAD-06: From Expression to Script *(Coming Soon)*
+- 🟢 [RedefineCAD-06: From Expression to Script](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_06_dsl_script.md)
+- 🔵 RedefineCAD-07: From DSL to Action *(Coming Soon)*
 
 🧩 Supplement:
 
