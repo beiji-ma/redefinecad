@@ -1,10 +1,6 @@
 # MMSA: Modular Metadata Structure Architecture
 
-![MMSA Cover](assets/semantic-modeling-matrixone-redefinecad-cover.png)
-
-
-
-
+![MMSA Cover](../assets/semantic-modeling-matrixone-redefinecad-cover.png)
 
 **Author:** Beiji Ma\
 **Created:** Summer 2025, Höör, Sweden\
@@ -73,11 +69,7 @@ The architecture is influenced by years of frustration across CAD/PLM implementa
 
 ## Chapter 3: Core Principles
 
-![Logical Architecture](assets/redefinecad_logical_architecture.png)
-
-
-
-
+![Logical Architecture](../assets/redefinecad_logical_architecture.png)
 
 MMSA is grounded in the following principles:
 
@@ -90,11 +82,7 @@ These principles allow MMSA to power collaborative editing, semantic diffs, and 
 
 ## Chapter 4: MMSA Model Structure
 
-![Storage Model](assets/redefinecad_02_storage_model.png)
-
-
-
-
+![Storage Model](../assets/redefinecad_02_storage_model.png)
 
 ### 4.1 Modules
 
@@ -134,13 +122,7 @@ Snapshots are taken at boundaries. You can query across lifecycles.
 
 ## Chapter 5: Semantic Layers & Interpretation
 
-![Semantic Query Layer](assets/structure_to_query.png)
-
-
-
-
-
-
+![Semantic Query Layer](../assets/structure_to_query.png)
 
 MMSA introduces semantic layers to separate concerns and enable clear interpretation at different abstraction levels. These layers include:
 
@@ -233,11 +215,7 @@ Future versions may incorporate policy engines, semantic validation, and provena
 
 ## Chapter 10: Implementation Guidelines
 
-![Deployment Architecture](assets/redefinecad_deployment_architecture.png)
-
-
-
-
+![Deployment Architecture](../assets/redefinecad_deployment_architecture.png)
 
 ### Recommended Technology Stack
 
