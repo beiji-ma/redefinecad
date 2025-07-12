@@ -1,6 +1,6 @@
 # MMSA: Modular Metadata Structure Architecture
 
-![MMSA Cover](assets/semantic-modeling-matrixone-redefinecad-cover.png)
+![MMSA Cover](../assets/semantic-modeling-matrixone-redefinecad-cover.png)
 
 
 
