@@ -141,7 +141,6 @@ Together, they enable not just documentation — but transformation.
 ## What’s Next
 
 - RedefineCAD-07: Metadata Diff and Semantic Drift
-- RedefineCAD-08: Query Language over Structural DSL
 
 Stay tuned.
 
