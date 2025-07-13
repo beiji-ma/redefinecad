@@ -42,7 +42,6 @@ One critical problem emerged mid-way through our efforts: attempts to improve lo
 
 This discovery became the turning point. It prompted a rethinking of how we structure pagination and data loading at a system level, eventually leading to a **two-step fetch strategy** that cleanly separates pagination logic from entity hydration. This key insight—and its architectural implications—became the highlight of our tuning journey.
 
-
 High-volume querying on the `/orders` endpoint exposed a series of scalability issues in the production environment. These included inefficient SQL execution patterns, excessive lazy-loading behavior, and ultimately, bottlenecks caused by excessive database round-trips.
 
 To systematically address these, we adopted a staged tuning strategy:
@@ -53,7 +52,6 @@ To systematically address these, we adopted a staged tuning strategy:
 4. **Final tuning with batch fetching** – Apply `@BatchSize` annotations to balance eager loading with batch-controlled fetches to reduce round-trips without causing memory bloat.
 
 Each step built upon the previous one, aiming to balance correctness, performance, and maintainability.
-
 
 High-volume querying on the `/orders` endpoint exposed a series of scalability issues in the production environment. These included inefficient SQL execution patterns, excessive lazy-loading behavior, and ultimately, bottlenecks caused by excessive database round-trips.
 
@@ -66,7 +64,6 @@ To systematically address these, we adopted a staged tuning strategy:
 
 Each step built upon the previous one, aiming to balance correctness, performance, and maintainability.
 
-
 The `/orders` endpoint suffered from performance issues due to **N+1 query problems** and heavy load on the database server.
 
 - **Trigger:** Kibana logs showed execution time > 5000ms.
@@ -76,6 +73,24 @@ The `/orders` endpoint suffered from performance issues due to **N+1 query probl
   ```
 
 ### Prior to v2.45.0 (Lazy Fetch)
+
+Before any structured tuning efforts were in place, the default behavior relied heavily on Hibernate's lazy-loading strategy. While theoretically elegant, in practice it caused severe performance degradation due to the classic **N+1 query problem**.
+
+As a workaround, developers inserted deep, imperative logic within `CacheOperations.java` to force eager initialization manually. This logic—duplicated below—was a symptom of the lack of any structured or declarative mechanism to express data shaping.
+
+This kind of solution reflects a common and uncomfortable truth: **when performance problems arise, many developers instinctively reach for 'just-in-time caching' or brute-force loading logic.**
+
+But what’s worse: the developers themselves often know how ugly it is. The code is usually buried in infrastructure services, littered with comments of discontent, yet without better alternatives.
+
+---This block of code, though surrounded by comments that hinted at the developer's own frustration, reflects a common reflex in performance firefighting: **just eagerly load everything, manually**. But while it may 'work', this approach is fundamentally flawed:
+
+- It violates separation of concerns.
+- It hardcodes business logic into infrastructure code.
+- It is brittle, tightly coupled, and fragile in face of model changes.
+
+> 🧠 More importantly: it reveals that **the default ORM abstractions failed to offer a meaningful alternative**.
+
+This is not about bad code—it's about a lack of architectural primitives for access shaping and control.
 
 ```kotlin
 // OrderEntity.kt
@@ -91,7 +106,7 @@ private var customerEntities: MutableSet<CustomerEntity> = mutableSetOf()
 ```
 
 ```java
-// CacheOperations.java
+// CacheOperations.java (before v2.45.0)
 public Page<OrderEntity> getOrders(...) {
     Page<OrderEntity> orderEntityPage = orderRepository.findAll(...);
     for (OrderEntity entity : orderEntityPage.getContent()) {
@@ -110,6 +125,8 @@ public Page<OrderEntity> getOrders(...) {
     return orderEntityPage;
 }
 ```
+
+> 🧠 This code is not merely unclean—it represents a dead-end in the abstraction. ORM frameworks like Hibernate lack the access shaping capabilities required to express such needs in a structured, evolvable way. Without a dynamic or pluggable access path mechanism, the fallback is always imperative, fragile, and error-prone.
 
 ### Optimization with v2.45.0: `@NamedEntityGraph`
 
@@ -172,7 +189,7 @@ This warning indicates that pagination couldn't be applied at the database level
 
 📌 **Resolution Strategy:** Shift away from subgraph-based eager loading for paginated endpoints and instead adopt `@BatchSize` to retrieve associated entities in grouped queries.
 
-![HHH000104 Warning Log](sandbox:/mnt/data/212c62c1-191e-41fb-a1c4-f0ab2e752e25.png)
+
 
 ### The Turning Point: Pagination vs. Fetch Graphs
 
@@ -195,7 +212,7 @@ Inspired by a lesser-known workaround (PS-6176), we implemented a clean separati
 
 This approach removed the reliance on `EntityGraph` in pagination contexts while preserving performance and correctness.
 
-![HHH000104 Solution Diagram](sandbox:/mnt/data/a4768f3b-960e-4c53-890d-8840351331c2.png)
+
 
 This rethinking of the data-loading model became a replicable pattern—not just a fix for this one endpoint, but a foundational insight into how API shape and DB strategy must align.
 
@@ -204,7 +221,6 @@ The real turning point came from resolving the subtle conflict between **collect
 Although `@EntityGraph` provided a clean way to eagerly fetch associated entities, it silently broke pagination logic—triggering `HHH000104`. This is not just a Hibernate quirk but a critical architectural trade-off.
 
 > The breakthrough was in recognizing that pagination and deep collection fetching simply **cannot coexist reliably** at the database level.
-
 
 
 
@@ -220,7 +236,6 @@ This preserves server-side pagination, avoids `HHH000104`, and retrieves complet
 > 🔧 *Bonus Tip:* Re-sort the result set after second fetch to preserve the original pagination order.
 
 This solution avoids native queries, is portable, and maintains consistency with the rest of the JPA stack.
-
 
 The real turning point came from resolving the subtle conflict between **collection fetch joins** and **pagination**.
 
@@ -316,7 +331,6 @@ These aren’t questions tuning alone can answer. They touch on how the system i
 
 > 🧭 This is where performance tuning meets architecture. And it’s where this series is headed next: toward a **systematic exploration of high-performance design**—not just as a technical goal, but as a product of principled structure.
 
-
 While the immediate performance gains are clear, the story doesn't end here.
 
 > Even with the optimized two-step fetching strategy, metrics revealed something unsettling: **2,450 active cursors** in production at peak.
@@ -338,13 +352,18 @@ These questions can’t be answered with tuning alone. They require stepping bac
 ### References
 
 - Internal: [p6spy](https://confluence.se.axis.com/display/PUBT/p6spy)
+
 - Tuning JPA: [JPA Parameters](https://confluence.se.axis.com/display/PUBT/Useful+JPA+Parameters)
+
 - Guides:
+
   - [Baeldung on EntityGraph](https://www.baeldung.com/spring-data-jpa-named-entity-graphs)
   - [JPA EntityGraph (advanced usage)](https://www.baeldung.com/jpa-entity-graph)
   - [Appsloveworld – Using JPA EntityGraph with lazy load and pagination issues (HHH000104)](https://www.appsloveworld.com/springboot/100/123/using-spring-data-jpa-entitygraph-with-lazy-load-mode-for-namedattributenode-fiel?utm_content=cmp-true)
 
 - Internal: [p6spy](https://confluence.se.axis.com/display/PUBT/p6spy)
+
 - Tuning JPA: [JPA Parameters](https://confluence.se.axis.com/display/PUBT/Useful+JPA+Parameters)
+
 - Guides: [Baeldung on EntityGraph](https://www.baeldung.com/spring-data-jpa-named-entity-graphs), [JPA EntityGraph](https://www.baeldung.com/jpa-entity-graph)
 
