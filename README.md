@@ -17,20 +17,67 @@ This is a multi-phase, long-term project that starts small—but is deeply ambit
 
 ## 🧠 Start Reading
 
-This project is documented through a series of articles:
+This project is documented through a structured series of articles:
 
-- 🟢 [RedefineCAD-01: Foundation and Motivation](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_01_foundation.md)
-- 🟢 [RedefineCAD-02: Storage Layer and Object Identity](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_02_storage.md)
-- 🟢 [RedefineCAD-03: Versioning Without Servers](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_03_versioning.md)
-- 🟢 [RedefineCAD Side Story: CATIA Dump Protocol](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_side_story_dump_protocol.md)
-- 🟢 [RedefineCAD-04: Deep Dive into CATIA Dump Protocol](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_04_dump_protocol.md)
-- 🟢 [RedefineCAD-05: From Structure to Query](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_05_query.md)
-- 🟢 [RedefineCAD-06: From Expression to Script](https://github.com/beiji-ma/redefinecad/blob/main/articles/redefine_cad_06_dsl_script.md)
-- 🔵 RedefineCAD-07: From DSL to Action *(Coming Soon)*
+### ✅ Published Articles (Phase 1: Rethinking Metadata)
 
-🧩 Supplement:
+- [RedefineCAD-00: Semantic Q&A](./articles/redefine_cad_00_semantic_qna.md)  
+  Questions and answers on semantic modeling and CAD decoupling.
 
-- [Why RedefineCAD? (Philosophy and Ecosystem Primer)](https://github.com/beiji-ma/redefinecad/blob/main/articles/why_redefinecad.md)
+- [RedefineCAD-01: Why Metadata First?](./articles/redefine_cad_01_foundation.md)  
+  Metadata before geometry—why structure comes first.
+
+- [RedefineCAD-02: Structure Before Geometry](./articles/redefine_cad_02_storage.md)  
+  Building product structure independently of shape.
+
+- [RedefineCAD-03: Versioning Without Servers](./articles/redefine_cad_03_versioning.md)  
+  Decentralized versioning using snapshot hashes.
+
+- [RedefineCAD-04: Deep Dive into CATIA Dump Protocol](./articles/redefine_cad_04_dump_protocol.md)  
+  A lightweight alternative to traditional CAD APIs.
+
+- [RedefineCAD-05: From Structure to Query](./articles/redefine_cad_05_query.md)  
+  How product structure leads to executable queries.
+
+- [RedefineCAD-06: From Expression to Script](./articles/redefine_cad_06_dsl_script.md)  
+  Turning DSL expressions into CLI workflows.
+
+- [RedefineCAD-07: From DSL to Action](./articles/redefine_cad_07_dsl_action.md)  
+  Automating system behavior through DSL-driven execution.
+
+- [RedefineCAD-08: Metadata Diff Protocol](./articles/redefine_cad_08_metadata_diff.md)  
+  Semantic differencing of metadata snapshots.
+
+### 🧩 Supplementary Notes
+
+- [Why RedefineCAD?](./articles/why_redefinecad.md)  
+  The philosophy and ecosystem rationale.
+
+- MatrixOne Influence Papers:  
+  - [Semantic Modeling from MatrixOne](./articles/matrixone_semantic_modeling.md)  
+  - [Semantic Transition to RedefineCAD](./articles/matrixone_to_redefinecad_semantic_philosophy.md)
+
+### 📋 Planned Documents (In Progress)
+
+> These documents represent the next evolution of RedefineCAD. Some are already underway as internal drafts.
+
+- Core Concepts:
+  - `metadata-first.md`
+  - `decoupling-geometry.md`
+  - `product-structure-driven.md`
+
+- Protocols:
+  - `dump_protocol.md`
+  - `versioning_protocol.md`
+  - `metadata-diff.md`
+
+- Tools:
+  - `catmeta-cli` User Guide
+  - `catquery` Query Language Manual
+
+- Visuals:
+  - Standard Graphic Assets
+  - LinkedIn Cover Gallery (with alt text)
 
 To cite this work:
 
