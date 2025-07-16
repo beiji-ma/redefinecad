@@ -81,13 +81,16 @@ These concepts appear repeatedly in our visual and textual design. Familiarity w
 
 ## 📜 License
 
-This work is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**.
+This project uses **dual licensing**:
+
+- 📘 **Documentation and articles** (including this README) are licensed under the  
+  **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)**.  
+  See [`articles/NOTICE.md`](./articles/NOTICE.md) for full details.
+
+- 💻 **Code** (scripts, tools, and examples) is licensed under the **MIT License**.  
+  See [`LICENSE`](./LICENSE) for the complete text.
 
 © 2025 Beiji Ma. All rights reserved.
-
-Commercial use, republication, or derivative works are **not permitted** without written consent.
-
-See [`articles/NOTICE.md`](https://github.com/beiji-ma/redefinecad/blob/main/articles/NOTICE.md) for full details.
 
 ---
 
