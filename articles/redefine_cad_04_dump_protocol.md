@@ -15,10 +15,14 @@ This article presents a structured deep dive into the `.CATProduct` dump protoco
 
 `.CATProduct` is a proprietary binary file format used by CATIA to store assemblies. It is not officially documented. However, CATIA provides mechanisms to dump these files into partial plaintext representations—typically through debug-level API hooks or internal utilities.
 
-We begin with such a textual dump:
+Here is an example of the transformation path:
 
-- `3.png`, `4.png`, `5.png` — Illustrate the raw text structure of a `.CATProduct` file
-- `9.png` — Shows the result of manual tokenization, revealing structural tags, system attributes, and embedded values
+![Raw dump example](../assets/3.png)
+![Raw dump example continued](../assets/4.png)
+![Raw dump example continued](../assets/5.png)
+![Manual tokenization result](../assets/9.png)
+
+These images illustrate the journey from raw, dense text to a cleanly tokenized structure.
 
 ### 🧩 Structure in the Chaos
 
