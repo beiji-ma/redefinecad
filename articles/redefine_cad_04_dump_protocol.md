@@ -18,15 +18,19 @@ This article presents a structured deep dive into the `.CATProduct` dump protoco
 Here is an example of the transformation path:
 
 ![Raw dump example](../assets/3.png)
+
 *Figure 1 – The dump begins with system-level metadata lines, densely packed and difficult to read without processing.*
 
 ![Raw dump example continued](../assets/4.png)
+
 *Figure 2 – As we move further, nested tag structures and repeating patterns emerge, hinting at hierarchy.*
 
 ![Raw dump example continued](../assets/5.png)
+
 *Figure 3 – Deeper into the file, labels, tag/value pairs, and structural markers mix together.*
 
 ![Manual tokenization result](../assets/9.png)
+
 *Figure 4 – After manual tokenization, the content is structured and clean, making it ready for parser input.*
 
 These images illustrate the journey from raw, dense text to a cleanly tokenized structure.
