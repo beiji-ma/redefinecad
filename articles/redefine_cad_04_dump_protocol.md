@@ -1,7 +1,7 @@
 ## RedefineCAD-04: Deep Dive into CATIA Dump Protocol
 
 > 🧩 **Background Note:**\
-> This article is the formal continuation of an experimental story initially documented in our [SideStory: From CATIA Dump to Structured Blocks](https://www.linkedin.com/posts/beiji-ma_catproduct-protocol-structure-activity-123456789).
+> This article is the formal continuation of an experimental story initially documented in our [SideStory: From CATIA Dump to Structured Blocks](./redefine_cad_side_story_dump_protocol.md).
 >
 > That side story explored the *real-world frustration* of facing undocumented `.CATProduct` binary files and discovering structure within their dump representations. While SideStory captured the moment of "desperate insight," this article focuses on the formal methodology, tokenization, and parsing architecture developed to process such dumps using a domain-specific language (DSL).
 
