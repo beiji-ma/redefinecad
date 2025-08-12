@@ -127,8 +127,8 @@ Diagram:\
 
 To understand the metadata payload we are targeting, here are real-world CATIA property panels:
 
-CATIA Property Panel Sample 1: (../assets/15.png)  \
-CATIA Property Panel Sample 2: (../assets/16.png)
+CATIA Property Panel Sample 1: ![Property Sample 1](../assets/15.png)  \
+CATIA Property Panel Sample 2: ![Property Sample 2](../assets/16.png)
 
 These screenshots show the structured metadata blocks (e.g., Part Number, Definition, OEM\_ fields) that our DSL will extract and reconstitute into atomic CAD blocks.
 
