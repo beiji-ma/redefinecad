@@ -97,5 +97,4 @@ Regardless of middleware or architectural style.
 
 ---
 
-End of document.
 
