@@ -144,14 +144,15 @@ Marketing features map to technical features. Structural decisions are derived e
 
 ```mermaid
 flowchart LR
-  Start([Start Traversal]) --> VP[Variation Point]
-  VP --> Ctx[Local Configuration Context
-(Feature Assignments)]
-  Ctx --> Eval[Evaluate Rules
-(Include / Replace / Route)]
-  Eval --> Select{Select Structural Outcome}
-  Select --> Prop[Propagate Context]
-  Prop --> Next([Continue Traversal])
+  Start(["Start Traversal"])
+  VP[Variation Point]
+  Ctx["Local Configuration Context<br/>(Feature Assignments)"]
+  Eval["Evaluate Rules<br/>(Include / Replace / Route)"]
+  Select{Select Structural Outcome}
+  Prop["Propagate Context"]
+  Next(["Continue Traversal"])
+
+  Start --> VP --> Ctx --> Eval --> Select --> Prop --> Next
 ```
 The structure is resolved incrementally as it is traversed, rather than evaluated as a single global configuration. A configuration context is not applied globally, but is evaluated at the point of structural decision. This means that each variation point is resolved in the context of its local feature assignments, interface constraints, and dependency relationships. This approach—commonly referred to as a *contextual resolver*—allows the system to derive structure that is sensitive to architecture boundaries, subsystem applicability, and variant‑specific compatibility conditions.
 
