@@ -9,7 +9,7 @@
 
 ### Design Philosophy Context
 
-The practical implication of this design perspective is that product structure is not authored directly as a static hierarchy. Instead, it emerges from the interaction of technical features, interfaces, and variation rules within a shared configuration model. Instead, it emerges from the interaction between technical features, interfaces, and variation rules within a shared configuration model.
+The practical implication of this design perspective is that product structure is not authored directly as a static hierarchy. Instead, it emerges from the interaction between technical features, interfaces, and variation rules within a shared configuration model.
 
 This document examines the commonly presented idea of "Next Generation PLM" and places it in the historical context of a real-world implementation that predates the contemporary narrative by more than a decade. In 2011, the Single BOM Dataset approach was implemented in a production automotive program with full lifecycle implications across engineering, manufacturing, and service. While the industry today often frames configuration-driven product structures as an emerging direction, the core principles have already been validated in practice.
 
@@ -41,7 +41,7 @@ The solution was delivered through three coordinated sub‑projects:
 
 In addition, a **Service‑focused component** was deployed to support after‑sales operations, commonly referenced at the time as the *Electrical/Equipment/Part Catalog* (EPC). Its purpose was to expose the resolved service‑relevant Bill of Materials for 4S service centers, including spare parts, replacements, and repair applicability. This component was implemented using the out‑of‑the‑box Library Central framework, extended with a full‑text search indexing layer to support practical retrieval and identification workflows for service technicians.
 
-Because the EPC view is itself a filtered projection of the resolved configuration, it did not require a separate authored dataset. It remained structurally consistent with the engineering definition while presenting only the service-relevant perspective.
+Because the EPC view is itself a filtered projection of the resolved configuration, it did not require a separate authored dataset. It remained structurally consistent with the engineering definition while presenting only the service‑relevant perspective.
 
 These initiatives were not separate systems—they operated on the same unified product definition, ensuring that engineering, manufacturing, sourcing, and service all derived their views from the same structural basis.
 
@@ -139,6 +139,24 @@ Two feature layers are distinguished within the MCG framework:
 Marketing features map to technical features. Structural decisions are derived exclusively from the technical feature layer.
 
 ### 6.3 Rules and Structural Resolution
+
+#### Contextual Resolver
+
+```mermaid
+flowchart LR
+  Start([Start Traversal]) --> VP[Variation Point]
+  VP --> Ctx[Local Configuration Context
+(Feature Assignments)]
+  Ctx --> Eval[Evaluate Rules
+(Include / Replace / Route)]
+  Eval --> Select{Select Structural Outcome}
+  Select --> Prop[Propagate Context]
+  Prop --> Next([Continue Traversal])
+```
+The structure is resolved incrementally as it is traversed, rather than evaluated as a single global configuration. A configuration context is not applied globally, but is evaluated at the point of structural decision. This means that each variation point is resolved in the context of its local feature assignments, interface constraints, and dependency relationships. This approach—commonly referred to as a *contextual resolver*—allows the system to derive structure that is sensitive to architecture boundaries, subsystem applicability, and variant‑specific compatibility conditions.
+
+Rather than computing a single global configuration and then filtering it, the contextual resolver evaluates the structure *as it is traversed*. This preserves correctness while avoiding over‑definition or unnecessary enumeration.
+
 
 Variation is expressed through rules that operate on the graph:
 
