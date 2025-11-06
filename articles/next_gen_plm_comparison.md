@@ -32,6 +32,19 @@ As a result, "Next Generation PLM" is often described in terms of benefits, outc
 
 ## 3. What We Achieved in 2011: Single BOM Dataset
 
+### Scope of the Program
+The solution was delivered through three coordinated sub‑projects:
+
+- **PDM Core** — Establishing controlled part definitions, attributes, lifecycle states, and change governance.
+- **BOM Solution** — Implementing the unified configuration‑resolvable product structure and lifecycle projections.
+- **Sourcing & Procurement Alignment** — Ensuring that supplier, cost, and sourcing alternative decisions were consistent with technical feature‑driven configuration contexts.
+
+In addition, a **Service‑focused component** was deployed to support after‑sales operations, commonly referenced at the time as the *Electrical/Equipment/Part Catalog* (EPC). Its purpose was to expose the resolved service‑relevant Bill of Materials for 4S service centers, including spare parts, replacements, and repair applicability. This component was implemented using the out‑of‑the‑box Library Central framework, extended with a full‑text search indexing layer to support practical retrieval and identification workflows for service technicians.
+
+Because the EPC view is itself a filtered projection of the resolved configuration, it did not require a separate authored dataset. It remained structurally consistent with the engineering definition while presenting only the service-relevant perspective.
+
+These initiatives were not separate systems—they operated on the same unified product definition, ensuring that engineering, manufacturing, sourcing, and service all derived their views from the same structural basis.
+
 The 2011 implementation did not introduce new terminology or claim to redefine PLM. Instead, it validated a structural approach that differs fundamentally from traditional BOM management. Rather than maintaining separate Engineering, Manufacturing, and Service BOMs as independently authored structures, a single configuration-resolvable product definition served as the shared source of truth across lifecycle domains.
 
 This approach relied on three essential principles:
