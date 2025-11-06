@@ -1,8 +1,15 @@
 # Next Generation PLM vs Single BOM Dataset (2011)
 
+> *A product is not defined by enumeration, but by constraint evaluation.*
+
+
 
 
 ## 1. Introduction
+
+### Design Philosophy Context
+
+The practical implication of this design perspective is that product structure is not authored directly as a static hierarchy. Instead, it emerges from the interaction of technical features, interfaces, and variation rules within a shared configuration model. Instead, it emerges from the interaction between technical features, interfaces, and variation rules within a shared configuration model.
 
 This document examines the commonly presented idea of "Next Generation PLM" and places it in the historical context of a real-world implementation that predates the contemporary narrative by more than a decade. In 2011, the Single BOM Dataset approach was implemented in a production automotive program with full lifecycle implications across engineering, manufacturing, and service. While the industry today often frames configuration-driven product structures as an emerging direction, the core principles have already been validated in practice.
 
@@ -58,15 +65,19 @@ This is why the solution can appear to anticipate current "Next Generation PLM" 
 Although configuration‑driven product structures have been demonstrated in practice, most enterprise PLM environments continue to rely on hierarchical BOM representations as the primary data model. These hierarchies are well‑suited for display, review, and communication, but they are limited in their ability to express variation, reuse, and structural dependencies.
 
 ### 5.1 The Persistence of Tree‑Structured BOM Models
+
 Traditional BOM hierarchies assume that the product can be represented as a single, fixed decomposition from whole to parts. When variation is introduced, organizations typically clone or branch structures to represent different configurations. While familiar, this method increases maintenance overhead and introduces divergence between lifecycle views.
 
 ### 5.2 Difficulty Representing Variation in a Hierarchical Model
+
 Product variation is not inherently hierarchical. Interchangeability, reuse, optional content, and interface compatibility form a network of relationships that is more accurately expressed as a graph. Hierarchical BOMs do not naturally capture these dependencies, forcing organizations to encode variation through exceptions, naming conventions, or duplication.
 
 ### 5.3 Lack of a Structural Resolution Mechanism
+
 In many PLM implementations, configuration selection is performed outside the product structure model. Rules, feature expressions, and configuration decisions are stored as annotations rather than mechanisms that actively shape the structure. Without an integrated resolution model, systems cannot reliably derive lifecycle views from a single definition.
 
 ### 5.4 Consequence: The Model Exists, but Not the Means to Operate It
+
 Because the hierarchical BOM remains the operational form while configuration logic remains external or informal, the underlying capability appears conceptually forward‑looking—even when it has already been proven. The gap is not in conceptual understanding but in the structural data model and resolution mechanism required to make the concept executable.
 
 In this sense, the Single BOM Dataset was not ahead of its time in theory, but in the maturity of the structural model it applied. The industry continues to refer to these ideas as "Next Generation" because the modeling foundation that enables them is still not widely in place.
@@ -74,6 +85,7 @@ In this sense, the Single BOM Dataset was not ahead of its time in theory, but i
 ## 6. Framework Explanation (MCG: Master Configuration Graph)
 
 ### Diagram: Master Configuration Graph Overview
+
 ```mermaid
 graph TD
   Part[Part] --> Rel[Relationship]
@@ -81,7 +93,6 @@ graph TD
   Part --> Interface[Interface]
   Variation[Variation Point] -.-> Part
 ```
-
 
 The Master Configuration Graph (MCG) provides the structural foundation required to generate lifecycle‑specific product views without duplication. It is a formal model that separates product structure from product configuration and defines how variation influences structural composition.
 
@@ -99,13 +110,13 @@ These elements form a connected graph rather than a strict hierarchy. Hierarchic
 ### 6.2 Feature Model Separation
 
 #### Diagram: Marketing Feature → Technical Feature Mapping
+
 ```mermaid
 graph LR
   MF[Marketing Feature] -->|maps_to| TF[Technical Feature]
   TF -->|drives| Rule[Rule]
   Rule -->|shapes| Structure[Product Graph]
 ```
-
 
 Two feature layers are distinguished within the MCG framework:
 
@@ -127,6 +138,7 @@ A *configuration context*—a specified assignment of technical feature values�
 ### 6.4 Projection into Lifecycle Views
 
 #### Diagram: Projection Pipeline
+
 ```mermaid
 graph LR
   MCG[Master Configuration Graph] -->|resolve| Resolved[Resolved Structure]
@@ -134,7 +146,6 @@ graph LR
   Resolved --> MBOM[MBOM]
   Resolved --> SBOM[SBOM]
 ```
-
 
 Lifecycle BOMs are not stored as separate datasets. They are generated by applying projection logic to the resolved configuration:
 
