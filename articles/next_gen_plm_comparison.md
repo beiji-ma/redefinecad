@@ -1,6 +1,6 @@
 # Next Generation PLM vs Single BOM Dataset (2011)
 
-[Draft placeholder — we will populate section by section]
+
 
 ## 1. Introduction
 
